@@ -1,0 +1,38 @@
+<h3>
+    <a href="/product" class="btn btn-danger">
+        <i class="fa fa-plus"> </i> Create New
+    </a>
+    Product List
+</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th>Price</th>
+            <th>Origin</th>
+            <th>Production</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.origin}}</td>
+            <td>{{this.production}}</td>
+            <td>
+                <a href="/product/{{this._id}}">
+                    <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+                </a>
+                <a href="/product/delete/{{this._id}}"
+                    onclick="return confirm('Are you sure to delete this record?');">
+                    <i class="fa fa-trash fa-lg" aria-hidden="true">
+
+                    </i>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

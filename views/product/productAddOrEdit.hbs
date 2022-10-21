@@ -1,0 +1,34 @@
+<h3>{{viewTitle}}</h3>
+<form action="/product" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" class="form-control" name="fullName" value="{{product.fullName}}" placeholder="Full Name">
+        <div class="text-danger">
+            {{product.fullNameError}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input type="price" class="form-control" name="price" value="{{product.price}}" placeholder="Price">
+        
+    </div>
+    <div class="form-row">
+        <div class="form-group md-6">
+            <label>Origin</label>
+            <input type="text" name="origin" placeholder="origin" value="{{product.origin}}" class="form-control">
+
+        </div>
+        <div class="form-group md-6">
+            <label>Production</label>
+            <input type="text" name="production" placeholder="production" value="{{product.production}}" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Submit</button>
+        <a href="/product/productList" class="btn btn-danger">
+            <i class="fa fa-list-alt"></i>View All
+        </a>
+    </div>
+</form>

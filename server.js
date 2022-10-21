@@ -4,7 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const expressHandlebars = require('express-handlebars');
 const employeeController = require('./controller/employeeController');
-
+const productController = require('./controller/productController');
 var app = express();
 
 app.use(bodyParser.urlencoded({
@@ -35,3 +35,4 @@ app.listen(port, () => {
 })
 
 app.use('/employee', employeeController);
+app.use('/product', productController);
