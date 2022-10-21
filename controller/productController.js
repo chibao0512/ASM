@@ -34,7 +34,7 @@ function insertRecord(req, res) {
                 handleValidationError(err, req.body);
                 res.render("product/productAddOrEdit", {
                     viewTitle: "Insert Product",
-                    Product: req.body
+                    product: req.body
                 })
             }
             console.log("Error occured during record insertion" + err);
@@ -45,14 +45,14 @@ function insertRecord(req, res) {
 function updateRecord(req, res) {
     Product.findOneAndUpdate({ _id: req.body._id, }, req.body, { new: true }, (err, doc) => {
         if (!err) {
-            res.redirect('product/list');
+            res.redirect('product/productList');
         }
         else {
             if (err.name == "ValidationError") {
                 handleValidationError(err, req.body);
                 res.render("product/productAddOrEdit", {
                     viewTitle: 'Update Product',
-                    Product: req.body
+                    product: req.body
                 });
             }
             else {
@@ -100,7 +100,6 @@ function handleValidationError(err, body) {
             case 'fullName':
                 body['fullNameError'] = err.errors[field].message;
                 break;
-
             default:
                 break;
         }

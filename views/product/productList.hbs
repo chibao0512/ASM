@@ -1,9 +1,6 @@
-<h3>
-    <a href="/product" class="btn btn-danger">
-        <i class="fa fa-plus"> </i> Create New
-    </a>
-    Product List
-</h3>
+<h3>{{viewTitle}}</h3>
+<hr>
+<h1 class="text-align: right"> Product List </h1>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -23,11 +20,12 @@
             <td>{{this.production}}</td>
             <td>
                 <a href="/product/{{this._id}}">
-                    <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+                    <i class="fa fa-pencil fa-lg" aria-hidden="true">Edit</i>
                 </a>
+                <a>// </a>
                 <a href="/product/delete/{{this._id}}"
                     onclick="return confirm('Are you sure to delete this record?');">
-                    <i class="fa fa-trash fa-lg" aria-hidden="true">
+                    <i class="" aria-hidden="true"> 
 
                     </i>
                 </a>
@@ -36,3 +34,6 @@
         {{/each}}
     </tbody>
 </table>
+
+    <a href="/product" class="btn btn-danger">
+        <i class="fa fa-plus"> </i> Create New </a>  

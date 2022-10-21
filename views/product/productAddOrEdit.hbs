@@ -1,6 +1,8 @@
 <h3>{{viewTitle}}</h3>
+
+<h2>New Product</h2>
 <form action="/product" method="POST" autocomplete="off">
-    <input type="hidden" name="_id" value="{{employee._id}}">
+    <input type="hidden" name="_id" value="{{product._id}}">
     <div class="form-group">
         <label>Full Name</label>
         <input type="text" class="form-control" name="fullName" value="{{product.fullName}}" placeholder="Full Name">
@@ -13,17 +15,17 @@
         <input type="price" class="form-control" name="price" value="{{product.price}}" placeholder="Price">
         
     </div>
-    <div class="form-row">
-        <div class="form-group md-6">
+   
+        <div class="form-group ">
             <label>Origin</label>
             <input type="text" name="origin" placeholder="origin" value="{{product.origin}}" class="form-control">
 
         </div>
-        <div class="form-group md-6">
+        <div class="form-group">
             <label>Production</label>
             <input type="text" name="production" placeholder="production" value="{{product.production}}" class="form-control">
         </div>
-    </div>
+
 
     <div class="form-group">
         <button type="submit" class="btn btn-info"><i class="fa fa-database"></i>Submit</button>

@@ -5,8 +5,10 @@ const bodyParser = require('body-parser');
 const expressHandlebars = require('express-handlebars');
 const employeeController = require('./controller/employeeController');
 const productController = require('./controller/productController');
+
 var app = express();
 
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
